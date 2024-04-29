@@ -1,9 +1,9 @@
 angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["messageHubProvider", function (messageHubProvider) {
-		messageHubProvider.eventIdPrefix = 'codbex-cars.Car.CarModel';
+		messageHubProvider.eventIdPrefix = 'codbex-cars.entities.CarModel';
 	}])
 	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/ts/codbex-cars/gen/api/Car/CarModelService.ts";
+		entityApiProvider.baseUrl = "/services/ts/codbex-cars/gen/api/entities/CarModelService.ts";
 	}])
 	.controller('PageController', ['$scope', 'messageHub', 'entityApi', 'Extensions', function ($scope, messageHub, entityApi, Extensions) {
 
@@ -13,8 +13,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		//-----------------Custom Actions-------------------//
 		Extensions.get('dialogWindow', 'codbex-cars-custom-action').then(function (response) {
-			$scope.pageActions = response.filter(e => e.perspective === "Car" && e.view === "CarModel" && (e.type === "page" || e.type === undefined));
-			$scope.entityActions = response.filter(e => e.perspective === "Car" && e.view === "CarModel" && e.type === "entity");
+			$scope.pageActions = response.filter(e => e.perspective === "entities" && e.view === "CarModel" && (e.type === "page" || e.type === undefined));
+			$scope.entityActions = response.filter(e => e.perspective === "entities" && e.view === "CarModel" && e.type === "entity");
 		});
 
 		$scope.triggerPageAction = function (action) {

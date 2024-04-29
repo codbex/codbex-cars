@@ -5,12 +5,12 @@
  */
 exports.getTile = function () {
     return {
-        group: "Car",
+        group: "Entities",
         name: "CarModel",
         caption: "Manage entity CarModel",
         tooltip: "CarModel",
         // icon: "file-o",
-        location: "/services/web/codbex-cars/gen/ui/Car/index.html",
+        location: "/services/web/codbex-cars/gen/ui/entities/index.html",
         order: "100",
         groupOrder: "100",
     };

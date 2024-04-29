@@ -7,14 +7,14 @@ export interface CarModelEntity {
     readonly Id: number;
     Manufacturer?: number;
     Model: string;
-    Year: number;
+    Year?: number;
     CarCategory?: number;
 }
 
 export interface CarModelCreateEntity {
     readonly Manufacturer?: number;
     readonly Model: string;
-    readonly Year: number;
+    readonly Year?: number;
     readonly CarCategory?: number;
 }
 
@@ -119,7 +119,6 @@ export class CarModelRepository {
                 name: "Year",
                 column: "CARMODEL_YEAR",
                 type: "INTEGER",
-                required: true
             },
             {
                 name: "CarCategory",
@@ -220,7 +219,7 @@ export class CarModelRepository {
     }
 
     private async triggerEvent(data: CarModelEntityEvent) {
-        const triggerExtensions = await extensions.loadExtensionModules("codbex-cars-Car-CarModel", ["trigger"]);
+        const triggerExtensions = await extensions.loadExtensionModules("codbex-cars-entities-CarModel", ["trigger"]);
         triggerExtensions.forEach(triggerExtension => {
             try {
                 triggerExtension.trigger(data);
@@ -228,6 +227,6 @@ export class CarModelRepository {
                 console.error(error);
             }            
         });
-        producer.topic("codbex-cars-Car-CarModel").send(JSON.stringify(data));
+        producer.topic("codbex-cars-entities-CarModel").send(JSON.stringify(data));
     }
 }

@@ -8,8 +8,8 @@ const viewData = {
     label: "CarModel",
     factory: "frame",
     region: "center",
-    link: "/services/web/codbex-cars/gen/ui/Car/CarModel/index.html",
-    perspectiveName: "Car",
+    link: "/services/web/codbex-cars/gen/ui/entities/CarModel/index.html",
+    perspectiveName: "entities",
 };
 
 if (typeof exports !== 'undefined') {

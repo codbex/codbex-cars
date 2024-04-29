@@ -1,9 +1,9 @@
 angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["messageHubProvider", function (messageHubProvider) {
-		messageHubProvider.eventIdPrefix = 'codbex-cars.Car.CarModel';
+		messageHubProvider.eventIdPrefix = 'codbex-cars.entities.CarModel';
 	}])
 	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/ts/codbex-cars/gen/api/Car/CarModelService.ts";
+		entityApiProvider.baseUrl = "/services/ts/codbex-cars/gen/api/entities/CarModelService.ts";
 	}])
 	.controller('PageController', ['$scope', 'messageHub', 'ViewParameters', 'entityApi', function ($scope, messageHub, ViewParameters, entityApi) {
 

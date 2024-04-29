@@ -4,10 +4,10 @@
  * Do not modify the content as it may be re-generated again.
  */
 const viewData = {
-    id: "CarModel-filter",
-    label: "CarModel Filter",
-    link: "/services/web/codbex-cars/gen/ui/Car/CarModel/dialog-filter/index.html",
-    perspectiveName: "Car",
+    id: "CarModel-details",
+    label: "CarModel",
+    link: "/services/web/codbex-cars/gen/ui/entities/CarModel/dialog-window/index.html",
+    perspectiveName: "entities",
 };
 
 if (typeof exports !== 'undefined') {
