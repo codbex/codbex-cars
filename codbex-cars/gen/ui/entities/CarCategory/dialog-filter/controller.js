@@ -1,6 +1,6 @@
 angular.module('page', ["ideUI", "ideView"])
 	.config(["messageHubProvider", function (messageHubProvider) {
-		messageHubProvider.eventIdPrefix = 'codbex-cars.Car.CarModel';
+		messageHubProvider.eventIdPrefix = 'codbex-cars.entities.CarCategory';
 	}])
 	.controller('PageController', ['$scope', 'messageHub', 'ViewParameters', function ($scope, messageHub, ViewParameters) {
 
@@ -39,17 +39,8 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.Id) {
 				filter.$filter.equals.Id = entity.Id;
 			}
-			if (entity.Manufacturer) {
-				filter.$filter.equals.Manufacturer = entity.Manufacturer;
-			}
-			if (entity.Model) {
-				filter.$filter.contains.Model = entity.Model;
-			}
-			if (entity.Year) {
-				filter.$filter.equals.Year = entity.Year;
-			}
-			if (entity.CarCategory) {
-				filter.$filter.equals.CarCategory = entity.CarCategory;
+			if (entity.Name) {
+				filter.$filter.contains.Name = entity.Name;
 			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,
@@ -64,7 +55,7 @@ angular.module('page', ["ideUI", "ideView"])
 		};
 
 		$scope.cancel = function () {
-			messageHub.closeDialogWindow("CarModel-filter");
+			messageHub.closeDialogWindow("CarCategory-filter");
 		};
 
 		$scope.clearErrorMessage = function () {

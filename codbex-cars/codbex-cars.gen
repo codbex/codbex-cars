@@ -31,6 +31,16 @@
       "order": "300",
       "icon": "/services/web/resources/unicons/user-check.svg",
       "role": ""
+    },
+    "entities": {
+      "views": [
+        "CarCategory"
+      ],
+      "name": "entities",
+      "label": "entities",
+      "order": "100",
+      "icon": "/services/web/resources/unicons/copy.svg",
+      "role": ""
     }
   },
   "models": [
@@ -224,6 +234,34 @@
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
+        },
+        {
+          "calculatedPropertyExpressionCreate": "",
+          "calculatedPropertyExpressionUpdate": "",
+          "dataAutoIncrement": false,
+          "dataLength": "0",
+          "dataName": "CARMODEL_CARCATEGORY",
+          "dataNullable": true,
+          "dataPrimaryKey": false,
+          "dataType": "INTEGER",
+          "dataUnique": false,
+          "isCalculatedProperty": false,
+          "isRequiredProperty": false,
+          "name": "CarCategory",
+          "widgetIsMajor": true,
+          "widgetLength": "20",
+          "widgetSize": "",
+          "widgetType": "TEXTBOX",
+          "relationshipName": "CarModel_CarCategory",
+          "relationshipEntityName": "CarCategory",
+          "relationshipEntityPerspectiveName": "entities",
+          "relationshipEntityPerspectiveLabel": "Entities",
+          "dataNotNull": false,
+          "widgetLabel": "CarCategory",
+          "widgetDropdownUrl": "",
+          "dataTypeJava": "int",
+          "dataTypeTypescript": "number",
+          "inputRule": ""
         }
       ],
       "caption": "Manage entity CarModel",
@@ -404,6 +442,87 @@
       ],
       "primaryKeysString": "Id",
       "hasDropdowns": true
+    },
+    {
+      "properties": [
+        {
+          "calculatedPropertyExpressionCreate": "",
+          "calculatedPropertyExpressionUpdate": "",
+          "dataAutoIncrement": true,
+          "dataLength": "0",
+          "dataName": "CARCATEGORY_ID",
+          "dataNullable": true,
+          "dataPrimaryKey": true,
+          "dataType": "INTEGER",
+          "dataUnique": false,
+          "isCalculatedProperty": false,
+          "isRequiredProperty": false,
+          "name": "Id",
+          "widgetIsMajor": true,
+          "widgetLength": "20",
+          "widgetSize": "",
+          "widgetType": "TEXTBOX",
+          "dataNotNull": false,
+          "widgetLabel": "Id",
+          "widgetDropdownUrl": "",
+          "dataTypeJava": "int",
+          "dataTypeTypescript": "number",
+          "inputRule": ""
+        },
+        {
+          "calculatedPropertyExpressionCreate": "",
+          "calculatedPropertyExpressionUpdate": "",
+          "dataAutoIncrement": false,
+          "dataLength": "755",
+          "dataName": "CARCATEGORY_NAME",
+          "dataNullable": false,
+          "dataPrecision": "NaN",
+          "dataPrimaryKey": false,
+          "dataScale": "NaN",
+          "dataType": "VARCHAR",
+          "dataUnique": true,
+          "isCalculatedProperty": false,
+          "isRequiredProperty": true,
+          "name": "Name",
+          "widgetIsMajor": true,
+          "widgetLength": "20",
+          "widgetSize": "",
+          "widgetType": "TEXTBOX",
+          "dataNotNull": true,
+          "widgetLabel": "Name",
+          "widgetDropdownUrl": "",
+          "dataTypeJava": "string",
+          "dataTypeTypescript": "string",
+          "minLength": 0,
+          "maxLength": 20,
+          "inputRule": ""
+        }
+      ],
+      "caption": "Manage entity CarCategory",
+      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_CARCATEGORY\"",
+      "dataName": "CARCATEGORY",
+      "dataQuery": "",
+      "icon": "/services/web/resources/unicons/file.svg",
+      "layoutType": "MANAGE",
+      "menuIndex": "100",
+      "menuKey": "carcategory",
+      "menuLabel": "CarCategory",
+      "name": "CarCategory",
+      "navigationPath": "/Home",
+      "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
+      "perspectiveLabel": "Entities",
+      "perspectiveName": "entities",
+      "perspectiveOrder": "100",
+      "perspectiveRole": "",
+      "title": "CarCategory",
+      "tooltip": "CarCategory",
+      "type": "PRIMARY",
+      "dataSource": "DefaultDB",
+      "referencedProjections": [],
+      "primaryKeys": [
+        "Id"
+      ],
+      "primaryKeysString": "Id"
     }
   ]
 }

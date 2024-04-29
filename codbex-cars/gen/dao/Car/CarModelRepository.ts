@@ -8,12 +8,14 @@ export interface CarModelEntity {
     Manufacturer?: number;
     Model: string;
     Year: number;
+    CarCategory?: number;
 }
 
 export interface CarModelCreateEntity {
     readonly Manufacturer?: number;
     readonly Model: string;
     readonly Year: number;
+    readonly CarCategory?: number;
 }
 
 export interface CarModelUpdateEntity extends CarModelCreateEntity {
@@ -27,42 +29,49 @@ export interface CarModelEntityOptions {
             Manufacturer?: number | number[];
             Model?: string | string[];
             Year?: number | number[];
+            CarCategory?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
             Manufacturer?: number | number[];
             Model?: string | string[];
             Year?: number | number[];
+            CarCategory?: number | number[];
         };
         contains?: {
             Id?: number;
             Manufacturer?: number;
             Model?: string;
             Year?: number;
+            CarCategory?: number;
         };
         greaterThan?: {
             Id?: number;
             Manufacturer?: number;
             Model?: string;
             Year?: number;
+            CarCategory?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
             Manufacturer?: number;
             Model?: string;
             Year?: number;
+            CarCategory?: number;
         };
         lessThan?: {
             Id?: number;
             Manufacturer?: number;
             Model?: string;
             Year?: number;
+            CarCategory?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
             Manufacturer?: number;
             Model?: string;
             Year?: number;
+            CarCategory?: number;
         };
     },
     $select?: (keyof CarModelEntity)[],
@@ -111,6 +120,11 @@ export class CarModelRepository {
                 column: "CARMODEL_YEAR",
                 type: "INTEGER",
                 required: true
+            },
+            {
+                name: "CarCategory",
+                column: "CARMODEL_CARCATEGORY",
+                type: "INTEGER",
             }
         ]
     };

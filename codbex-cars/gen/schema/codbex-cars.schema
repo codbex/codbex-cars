@@ -52,6 +52,33 @@
                         "precision": "NaN",
                         "scale": "NaN",
                         "name": "CARMODEL_YEAR"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "nullable": true,
+                        "name": "CARMODEL_CARCATEGORY"
+                    }
+                ]
+            },
+            {
+                "name": "CODBEX_CARCATEGORY",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "CARCATEGORY_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 755,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "name": "CARCATEGORY_NAME"
                     }
                 ]
             },
@@ -72,6 +99,15 @@
                 "columns": "CARMODEL_MANUFACTURER",
                 "referencedTable": "CODBEX_MANUFACTURER",
                 "referencedColumns": "MANUFACTURER_ID"
+            },
+            {
+                "name": "CarModel_CarCategory",
+                "type": "foreignKey",
+                "table": "CODBEX_CARMODEL",
+                "constraintName": "CarModel_CarCategory",
+                "columns": "CARMODEL_CARCATEGORY",
+                "referencedTable": "CODBEX_CARCATEGORY",
+                "referencedColumns": "CARCATEGORY_ID"
             }
         ]
     },
