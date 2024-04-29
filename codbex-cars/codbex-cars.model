@@ -306,7 +306,7 @@
                         "calculatedPropertyExpressionCreate": "",
                         "calculatedPropertyExpressionUpdate": "",
                         "dataAutoIncrement": "false",
-                        "dataLength": "",
+                        "dataLength": "20",
                         "dataName": "CARMODEL_YEAR",
                         "dataNullable": "true",
                         "dataPrecision": "NaN",

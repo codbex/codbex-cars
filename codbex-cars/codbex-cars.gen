@@ -1,15 +1,15 @@
 {
   "tablePrefix": "CODBEX_",
   "brand": "codbex",
-  "brandUrl": "https://www.codbex.com/",
-  "title": "Codbex cars",
+  "brandUrl": "https://www.codbex.com",
+  "title": "Codbex Cars",
   "description": "Car Management",
-  "fileName": "codbex-cars",
-  "dataSource": "DefaultDB",
   "projectName": "codbex-cars",
   "workspaceName": "workspace",
   "filePath": "codbex-cars.model",
   "templateId": "template-application-angular/template/template.js",
+  "fileName": "codbex-cars",
+  "dataSource": "DefaultDB",
   "perspectives": {
     "Car": {
       "views": [

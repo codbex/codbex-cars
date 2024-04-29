@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Codbex cars - OpenAPI 3.0
+  title: Codbex Cars - OpenAPI 3.0
   version: 1.0.0
   description: Car Management
 externalDocs:
