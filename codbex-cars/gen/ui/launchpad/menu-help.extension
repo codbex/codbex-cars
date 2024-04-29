@@ -1,0 +1,5 @@
+{
+    "module": "codbex-cars/gen/ui/launchpad/menu-help.js",
+    "extensionPoint": "codbex-cars-menu",
+    "description": "codbex-cars - Application Menu"
+}

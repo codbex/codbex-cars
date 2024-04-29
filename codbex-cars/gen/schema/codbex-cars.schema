@@ -1,0 +1,79 @@
+{
+    "schema": {
+        "structures": [
+            {
+                "name": "CODBEX_CAR",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "CAR_ID"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "nullable": true,
+                        "name": "CAR_CARMODEL"
+                    }
+                ]
+            },
+            {
+                "name": "CODBEX_CARMODEL",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "CARMODEL_ID"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "nullable": true,
+                        "name": "CARMODEL_MANUFACTURER"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 255,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "name": "CARMODEL_MODEL"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 20,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "name": "CARMODEL_YEAR"
+                    }
+                ]
+            },
+            {
+                "name": "Car_CarModel",
+                "type": "foreignKey",
+                "table": "CODBEX_CAR",
+                "constraintName": "Car_CarModel",
+                "columns": "CAR_CARMODEL",
+                "referencedTable": "CODBEX_CARMODEL",
+                "referencedColumns": "CARMODEL_ID"
+            },
+            {
+                "name": "CarModel_Manufacturer",
+                "type": "foreignKey",
+                "table": "CODBEX_CARMODEL",
+                "constraintName": "CarModel_Manufacturer",
+                "columns": "CARMODEL_MANUFACTURER",
+                "referencedTable": "CODBEX_MANUFACTURER",
+                "referencedColumns": "MANUFACTURER_ID"
+            }
+        ]
+    },
+    "datasource": "DefaultDB"
+}
