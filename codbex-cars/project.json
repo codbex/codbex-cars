@@ -1,1 +1,11 @@
-{"guid":"codbex-cars"}
+{
+    "guid": "codbex-cars",
+    "dependencies": [
+        {
+            "guid": "codbex-partners",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-partners.git",
+            "branch": "main"
+        }
+    ]
+}
