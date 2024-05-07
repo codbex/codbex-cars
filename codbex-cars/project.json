@@ -6,6 +6,12 @@
             "type": "git",
             "url": "https://github.com/codbex/codbex-partners.git",
             "branch": "main"
+        },
+        {
+            "guid": "codbex-orders",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-orders.git",
+            "branch": "main"
         }
     ],
     "actions": [
