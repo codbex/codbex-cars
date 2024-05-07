@@ -1,0 +1,10 @@
+CARCATEGORY_ID, CARCATEGORY_NAME
+1,SUV
+2,Sedan
+3,Coupe
+4,Convertible
+5,Hatchback
+6,Pickup
+7,Van
+8,Minivan
+9,Wagon 

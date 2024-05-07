@@ -1,0 +1,15 @@
+{
+  "files": [
+    {
+      "table": "CODBEX_CARCATEGORY",
+      "schema": "PUBLIC",
+      "file": "/codbex-cars-data/codbex-cars-csvim",
+      "header": true,
+      "useHeaderNames": true,
+      "delimField": ",",
+      "delimEnclosing": "\"",
+      "distinguishEmptyFromNull": true,
+      "version": "1.0"
+    }
+  ]
+}
