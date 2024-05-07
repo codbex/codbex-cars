@@ -36,19 +36,19 @@ angular.module('page', ["ideUI", "ideView"])
 					}
 				},
 			};
-			if (entity.Id) {
+			if (entity.Id !== undefined) {
 				filter.$filter.equals.Id = entity.Id;
 			}
-			if (entity.Manufacturer) {
+			if (entity.Manufacturer !== undefined) {
 				filter.$filter.equals.Manufacturer = entity.Manufacturer;
 			}
 			if (entity.Model) {
 				filter.$filter.contains.Model = entity.Model;
 			}
-			if (entity.Year) {
+			if (entity.Year !== undefined) {
 				filter.$filter.equals.Year = entity.Year;
 			}
-			if (entity.CarCategory) {
+			if (entity.CarCategory !== undefined) {
 				filter.$filter.equals.CarCategory = entity.CarCategory;
 			}
 			messageHub.postMessage("entitySearch", {
