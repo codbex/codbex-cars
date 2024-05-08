@@ -12,6 +12,7 @@ tags:
   - name: Car
   - name: entities
   - name: entities
+  - name: Appointment
   - name: entities
   - name: entities
 paths:
@@ -1199,7 +1200,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-cars/gen/api/entities/AppointmentService.ts:
+  /codbex-cars/gen/api/Appointment/AppointmentService.ts:
     get:
       summary: List Appointment
       parameters:
@@ -1220,7 +1221,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - entities
+        - Appointment
       responses:
         200:
           description: Successful Request
@@ -1251,7 +1252,7 @@ paths:
     post:
       summary: Create Appointment
       tags:
-        - entities
+        - Appointment
       requestBody:
         content:
           application/json:
@@ -1283,7 +1284,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-cars/gen/api/entities/AppointmentService.ts/{id}:
+  /codbex-cars/gen/api/Appointment/AppointmentService.ts/{id}:
     get:
       summary: Get Appointment by Id
       parameters:
@@ -1294,7 +1295,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - Appointment
       responses:
         200:
           description: Successful Request
@@ -1332,7 +1333,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - Appointment
       requestBody:
         content:
           application/json:
@@ -1380,7 +1381,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - Appointment
       responses:
         204:
           description: Successful Request
@@ -1402,11 +1403,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-cars/gen/api/entities/AppointmentService.ts/count:
+  /codbex-cars/gen/api/Appointment/AppointmentService.ts/count:
     get:
       summary: Count the number of Appointment
       tags:
-        - entities
+        - Appointment
       responses:
         200:
           description: Successful Request
@@ -1430,7 +1431,7 @@ paths:
     post:
       summary: Count the number of Appointment by AppointmentFilterOptions
       tags:
-        - entities
+        - Appointment
       requestBody:
         content:
           application/json:
@@ -1444,7 +1445,6 @@ paths:
                     notEquals:
                       Id: 33
                     contains:
-                      Property2: "abcd"
                       Issue: "abcd"
                     greaterThan:
                       Id: 0
@@ -1467,7 +1467,6 @@ paths:
                 value:
                   $filter:
                     contains:
-                      Property2: "abcd"
                       Issue: "abcd"
               countWithGreaterThan:
                 summary: Count with Greater Than
@@ -1514,11 +1513,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-cars/gen/api/entities/AppointmentService.ts/search:
+  /codbex-cars/gen/api/Appointment/AppointmentService.ts/search:
     post:
       summary: Search Appointment by AppointmentFilterOptions
       tags:
-        - entities
+        - Appointment
       requestBody:
         content:
           application/json:
@@ -1532,7 +1531,6 @@ paths:
                     notEquals:
                       Id: 33
                     contains:
-                      Property2: "abcd"
                       Issue: "abcd"
                     greaterThan:
                       Id: 0
@@ -1555,7 +1553,6 @@ paths:
                 value:
                   $filter:
                     contains:
-                      Property2: "abcd"
                       Issue: "abcd"
               searchWithGreaterThan:
                 summary: Search with Greater Than
@@ -1991,6 +1988,390 @@ paths:
                 type: array
                 items:
                     $ref: '#/components/schemas/AppointmentStatus'
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /codbex-cars/gen/api/entities/AppointmentToStockRecordService.ts:
+    get:
+      summary: List AppointmentToStockRecord
+      parameters:
+        - in: query
+          name: $limit
+          description: The number of records to be returned _(both `$limit` and `$offset` should be provided)_.
+          required: false
+          allowReserved: true
+          schema:
+            type: integer
+            allowEmptyValue: true
+        - in: query
+          name: $offset
+          description: The number of records to skip _(both `$limit` and `$offset` should be provided)_.
+          required: false
+          allowReserved: true
+          schema:
+            type: integer
+            allowEmptyValue: true
+      tags:
+        - entities
+      responses:
+        200:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                    $ref: '#/components/schemas/AppointmentToStockRecord'
+        400:
+          description: Bad Request Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      summary: Create AppointmentToStockRecord
+      tags:
+        - entities
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppointmentToStockRecord'
+        required: true
+      responses:
+        201:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppointmentToStockRecord'
+        400:
+          description: Bad Request Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /codbex-cars/gen/api/entities/AppointmentToStockRecordService.ts/{id}:
+    get:
+      summary: Get AppointmentToStockRecord by Id
+      parameters:
+        - in: path
+          name: id
+          description: The Id of the entity.
+          required: true
+          schema:
+            type: string
+      tags:
+        - entities
+      responses:
+        200:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                    $ref: '#/components/schemas/AppointmentToStockRecord'
+        404:
+          description: Entity Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      summary: Update AppointmentToStockRecord by Id
+      parameters:
+        - in: path
+          name: id
+          description: The Id of the entity.
+          required: true
+          schema:
+            type: string
+      tags:
+        - entities
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppointmentToStockRecord'
+        required: true
+      responses:
+        200:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppointmentToStockRecord'
+        400:
+          description: Bad Request Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        404:
+          description: Entity Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete AppointmentToStockRecord by Id
+      parameters:
+        - in: path
+          name: id
+          description: The Id of the entity.
+          required: true
+          schema:
+            type: string
+      tags:
+        - entities
+      responses:
+        204:
+          description: Successful Request
+        404:
+          description: Entity Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /codbex-cars/gen/api/entities/AppointmentToStockRecordService.ts/count:
+    get:
+      summary: Count the number of AppointmentToStockRecord
+      tags:
+        - entities
+      responses:
+        200:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: integer
+                example: 100
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      summary: Count the number of AppointmentToStockRecord by AppointmentToStockRecordFilterOptions
+      tags:
+        - entities
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppointmentToStockRecordFilterOptions'
+            examples:
+              countWithMultipleCriteria:
+                summary: Count with multiple criteria
+                value:
+                  $filter:
+                    notEquals:
+                      Id: 33
+                    greaterThan:
+                      Id: 0
+                    lessThanOrEqual:
+                      Id: 100
+              countWithEquals:
+                summary: Count with Equals
+                value:
+                  $filter:
+                    equals:
+                      Id: 0
+              countWithNotEquals:
+                summary: Count with Not Equals
+                value:
+                  $filter:
+                    notEquals:
+                      Id: 0
+              countWithGreaterThan:
+                summary: Count with Greater Than
+                value:
+                  $filter:
+                    greaterThan:
+                      Id: 0
+              countWithGreaterThanOrEqual:
+                summary: Count with Greater Than Or Equal
+                value:
+                  $filter:
+                    greaterThanOrEqual:
+                      Id: 0
+              countWithLessThan:
+                summary: Count with Less Than
+                value:
+                  $filter:
+                    lessThan:
+                      Id: 0
+              countWithLessThanOrEqual:
+                summary: Count with Less Than Or Equal
+                value:
+                  $filter:
+                    lessThanOrEqual:
+                      Id: 0
+        required: true
+      responses:
+        200:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: integer
+                example: 100
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /codbex-cars/gen/api/entities/AppointmentToStockRecordService.ts/search:
+    post:
+      summary: Search AppointmentToStockRecord by AppointmentToStockRecordFilterOptions
+      tags:
+        - entities
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppointmentToStockRecordFilterOptions'
+            examples:
+              searchWithMultipleCriteria:
+                summary: Search with multiple criteria
+                value:
+                  $filter:
+                    notEquals:
+                      Id: 33
+                    greaterThan:
+                      Id: 0
+                    lessThanOrEqual:
+                      Id: 100
+              searchWithEquals:
+                summary: Search with Equals
+                value:
+                  $filter:
+                    equals:
+                      Id: 0
+              searchWithNotEquals:
+                summary: Search with Not Equals
+                value:
+                  $filter:
+                    notEquals:
+                      Id: 0
+              searchWithGreaterThan:
+                summary: Search with Greater Than
+                value:
+                  $filter:
+                    greaterThan:
+                      Id: 0
+              searchWithGreaterThanOrEqual:
+                summary: Search with Greater Than Or Equal
+                value:
+                  $filter:
+                    greaterThanOrEqual:
+                      Id: 0
+              searchWithLessThan:
+                summary: Search with Less Than
+                value:
+                  $filter:
+                    lessThan:
+                      Id: 0
+              searchWithLessThanOrEqual:
+                summary: Search with Less Than Or Equal
+                value:
+                  $filter:
+                    lessThanOrEqual:
+                      Id: 0
+        required: true
+      responses:
+        200:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                    $ref: '#/components/schemas/AppointmentToStockRecord'
         403:
           description: Forbidden Error
           content:
@@ -2478,10 +2859,6 @@ components:
         Id:
           type: integer
           format: int32
-        Property2:
-          type: string
-          minLength: 0
-          maxLength: 20
         Operator:
           type: integer
           format: int32
@@ -2497,15 +2874,15 @@ components:
         SalesOrder:
           type: integer
           format: int32
-        PurchaseOrder:
-          type: integer
-          format: int32
         IntakeDate:
         ReleaseDate:
         Issue:
           type: string
           minLength: 0
           maxLength: 755
+        Customer:
+          type: integer
+          format: int32
     AppointmentFilterOptions:
       type: object
       properties:
@@ -2523,17 +2900,6 @@ components:
                       items:
                         type: integer
                         format: int32
-                Property2:
-                  oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 20
-                    - type: array
-                      items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 20
                 Operator:
                   oneOf:
                     - type: integer
@@ -2574,14 +2940,6 @@ components:
                       items:
                         type: integer
                         format: int32
-                PurchaseOrder:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
                 IntakeDate:
                   oneOf:
                 ReleaseDate:
@@ -2597,6 +2955,14 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 755
+                Customer:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
             notEquals:
               type: object
               properties:
@@ -2608,17 +2974,6 @@ components:
                       items:
                         type: integer
                         format: int32
-                Property2:
-                  oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 20
-                    - type: array
-                      items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 20
                 Operator:
                   oneOf:
                     - type: integer
@@ -2652,14 +3007,6 @@ components:
                         type: integer
                         format: int32
                 SalesOrder:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
-                PurchaseOrder:
                   oneOf:
                     - type: integer
                       format: int32
@@ -2682,36 +3029,36 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 755
+                Customer:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
             contains:
               type: object
               properties:
                 Id:
-                Property2:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
                 Operator:
                 Assigee:
                 Car:
                 AppointmentStatus:
                 SalesOrder:
-                PurchaseOrder:
                 IntakeDate:
                 ReleaseDate:
                 Issue:
                   type: string
                   minLength: 0
                   maxLength: 755
+                Customer:
             greaterThan:
               type: object
               properties:
                 Id:
                   type: integer
                   format: int32
-                Property2:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
                 Operator:
                   type: integer
                   format: int32
@@ -2727,25 +3074,21 @@ components:
                 SalesOrder:
                   type: integer
                   format: int32
-                PurchaseOrder:
-                  type: integer
-                  format: int32
                 IntakeDate:
                 ReleaseDate:
                 Issue:
                   type: string
                   minLength: 0
                   maxLength: 755
+                Customer:
+                  type: integer
+                  format: int32
             greaterThanOrEqual:
               type: object
               properties:
                 Id:
                   type: integer
                   format: int32
-                Property2:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
                 Operator:
                   type: integer
                   format: int32
@@ -2761,25 +3104,21 @@ components:
                 SalesOrder:
                   type: integer
                   format: int32
-                PurchaseOrder:
-                  type: integer
-                  format: int32
                 IntakeDate:
                 ReleaseDate:
                 Issue:
                   type: string
                   minLength: 0
                   maxLength: 755
+                Customer:
+                  type: integer
+                  format: int32
             lessThan:
               type: object
               properties:
                 Id:
                   type: integer
                   format: int32
-                Property2:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
                 Operator:
                   type: integer
                   format: int32
@@ -2795,25 +3134,21 @@ components:
                 SalesOrder:
                   type: integer
                   format: int32
-                PurchaseOrder:
-                  type: integer
-                  format: int32
                 IntakeDate:
                 ReleaseDate:
                 Issue:
                   type: string
                   minLength: 0
                   maxLength: 755
+                Customer:
+                  type: integer
+                  format: int32
             lessThanOrEqual:
               type: object
               properties:
                 Id:
                   type: integer
                   format: int32
-                Property2:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
                 Operator:
                   type: integer
                   format: int32
@@ -2829,23 +3164,23 @@ components:
                 SalesOrder:
                   type: integer
                   format: int32
-                PurchaseOrder:
-                  type: integer
-                  format: int32
                 IntakeDate:
                 ReleaseDate:
                 Issue:
                   type: string
                   minLength: 0
                   maxLength: 755
+                Customer:
+                  type: integer
+                  format: int32
         $select:
           type: array
-          example: ["Id", "Property2", "Operator", "Assigee", "Car", "AppointmentStatus", "SalesOrder", "PurchaseOrder", "IntakeDate", "ReleaseDate", "Issue"]
+          example: ["Id", "Operator", "Assigee", "Car", "AppointmentStatus", "SalesOrder", "IntakeDate", "ReleaseDate", "Issue", "Customer"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Property2,Operator,Assigee,Car,AppointmentStatus,SalesOrder,PurchaseOrder,IntakeDate,ReleaseDate,Issue"
+            example: "Id,Operator,Assigee,Car,AppointmentStatus,SalesOrder,IntakeDate,ReleaseDate,Issue,Customer"
         $order:
           type: string
           enum: ["asc", "desc"]
@@ -2973,6 +3308,183 @@ components:
         $sort:
           - type: string
             example: "Id,Name"
+        $order:
+          type: string
+          enum: ["asc", "desc"]
+          example: "asc"
+        $offset:
+          type: integer
+          example: 0
+        $limit:
+          type: integer
+          example: 10
+    AppointmentToStockRecord:
+      type: object
+      required:
+      properties:
+        Id:
+          type: integer
+          format: int32
+        Appointment:
+          type: integer
+          format: int32
+        StockRecord:
+          type: integer
+          format: int32
+        PurchaseOrder:
+          type: integer
+          format: int32
+    AppointmentToStockRecordFilterOptions:
+      type: object
+      properties:
+        $filter:
+          type: object
+          properties:
+            equals:
+              type: object
+              properties:
+                Id:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+                Appointment:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+                StockRecord:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+                PurchaseOrder:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+            notEquals:
+              type: object
+              properties:
+                Id:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+                Appointment:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+                StockRecord:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+                PurchaseOrder:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+            contains:
+              type: object
+              properties:
+                Id:
+                Appointment:
+                StockRecord:
+                PurchaseOrder:
+            greaterThan:
+              type: object
+              properties:
+                Id:
+                  type: integer
+                  format: int32
+                Appointment:
+                  type: integer
+                  format: int32
+                StockRecord:
+                  type: integer
+                  format: int32
+                PurchaseOrder:
+                  type: integer
+                  format: int32
+            greaterThanOrEqual:
+              type: object
+              properties:
+                Id:
+                  type: integer
+                  format: int32
+                Appointment:
+                  type: integer
+                  format: int32
+                StockRecord:
+                  type: integer
+                  format: int32
+                PurchaseOrder:
+                  type: integer
+                  format: int32
+            lessThan:
+              type: object
+              properties:
+                Id:
+                  type: integer
+                  format: int32
+                Appointment:
+                  type: integer
+                  format: int32
+                StockRecord:
+                  type: integer
+                  format: int32
+                PurchaseOrder:
+                  type: integer
+                  format: int32
+            lessThanOrEqual:
+              type: object
+              properties:
+                Id:
+                  type: integer
+                  format: int32
+                Appointment:
+                  type: integer
+                  format: int32
+                StockRecord:
+                  type: integer
+                  format: int32
+                PurchaseOrder:
+                  type: integer
+                  format: int32
+        $select:
+          type: array
+          example: ["Id", "Appointment", "StockRecord", "PurchaseOrder"]
+          items:
+            type: string
+        $sort:
+          - type: string
+            example: "Id,Appointment,StockRecord,PurchaseOrder"
         $order:
           type: string
           enum: ["asc", "desc"]
