@@ -1,0 +1,9 @@
+APPOINTMENTSTATUS_ID, APPOINTMENTSTATUS_NAME
+1,Scheduled
+2,Pending
+3,Confirmed
+4,Cancelled
+5,In Progress
+6,Completed
+7,On Hold
+8,Overdue

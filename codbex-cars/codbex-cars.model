@@ -579,7 +579,7 @@
                         "relationshipName": "Appointment_Customer",
                         "relationshipEntityName": "Customer",
                         "relationshipEntityPerspectiveName": "Customers",
-                        "relationshipEntityPerspectiveLabel": ""
+                        "relationshipEntityPerspectiveLabel": "Entities"
                     }
                 ],
                 "caption": "Manage entity Appointment",
@@ -1444,7 +1444,7 @@
                         "relationshipName": "AppointmentToStockRecord_PurchaseOrder",
                         "relationshipEntityName": "PurchaseOrder",
                         "relationshipEntityPerspectiveName": "PurchaseOrder",
-                        "relationshipEntityPerspectiveLabel": ""
+                        "relationshipEntityPerspectiveLabel": "Entities"
                     }
                 ],
                 "caption": "Manage entity AppointmentToStockRecord",
@@ -1988,7 +1988,7 @@
                 "name": "Customer",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/user-plus.svg",
-                "perspectiveLabel": "",
+                "perspectiveLabel": "Entities",
                 "perspectiveName": "Customers",
                 "perspectiveOrder": "100",
                 "perspectiveRole": "",
@@ -2504,7 +2504,7 @@
                 "name": "PurchaseOrder",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/receipt-alt.svg",
-                "perspectiveLabel": "",
+                "perspectiveLabel": "Entities",
                 "perspectiveName": "PurchaseOrder",
                 "perspectiveOrder": "520",
                 "perspectiveRole": "",

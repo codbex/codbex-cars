@@ -3,7 +3,18 @@
     {
       "table": "CODBEX_CARCATEGORY",
       "schema": "PUBLIC",
-      "file": "/codbex-cars-data/codbex-cars-csvim",
+      "file": "/codbex-cars-data/car-category",
+      "header": true,
+      "useHeaderNames": true,
+      "delimField": ",",
+      "delimEnclosing": "\"",
+      "distinguishEmptyFromNull": true,
+      "version": "1.0"
+    },
+    {
+      "table": "CODBEX_APPOINTMENTSTATUS",
+      "schema": "PUBLIC",
+      "file": "/codbex-cars-data/appointment-statuses.csv",
       "header": true,
       "useHeaderNames": true,
       "delimField": ",",
