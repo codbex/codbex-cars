@@ -1,5 +1,4 @@
 MANUFACTURER_ID, MANUFACTURER_NAME
-0,Acura
 1,Alfa-Romeo
 2,Aston Martin
 3,Audi
@@ -61,3 +60,4 @@ MANUFACTURER_ID, MANUFACTURER_NAME
 59,Toyota
 60,Volkswagen
 61,Volvo
+62,Acura
