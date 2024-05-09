@@ -1,9 +1,9 @@
 {
   "files": [
     {
-      "table": "CODBEX_CARCATEGORY",
+      "table": "CODBEX_APPOINTMENTSTATUS",
       "schema": "PUBLIC",
-      "file": "/codbex-cars-data/car-category",
+      "file": "/codbex-cars-data/appointment-statuses.csv",
       "header": true,
       "useHeaderNames": true,
       "delimField": ",",
@@ -12,9 +12,20 @@
       "version": "1.0"
     },
     {
-      "table": "CODBEX_APPOINTMENTSTATUS",
+      "table": "CODBEX_MANUFACTURER",
       "schema": "PUBLIC",
-      "file": "/codbex-cars-data/appointment-statuses.csv",
+      "file": "/codbex-cars-data/car-manufacturers.csv",
+      "header": true,
+      "useHeaderNames": true,
+      "delimField": ",",
+      "delimEnclosing": "\"",
+      "distinguishEmptyFromNull": true,
+      "version": "1.0"
+    },
+    {
+      "table": "CODBEX_CARCATEGORY",
+      "schema": "PUBLIC",
+      "file": "/codbex-cars-data/car-category.csv",
       "header": true,
       "useHeaderNames": true,
       "delimField": ",",
