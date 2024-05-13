@@ -1,5 +1,0 @@
-{
-    "module": "codbex-cars/gen/ui/entities/AppointmentToStockRecord/dialog-filter/view.js",
-    "extensionPoint": "codbex-cars-dialog-window",
-    "description": "codbex-cars - Application Dialog Window"
-}

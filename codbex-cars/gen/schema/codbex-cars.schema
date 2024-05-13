@@ -18,6 +18,13 @@
                         "length": 0,
                         "nullable": true,
                         "name": "CAR_CARMODEL"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 255,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "name": "CAR_PLATENUMBER"
                     }
                 ]
             },
@@ -84,84 +91,6 @@
                 ]
             },
             {
-                "name": "CODBEX_APPOINTMENT",
-                "type": "TABLE",
-                "columns": [
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "primaryKey": true,
-                        "identity": true,
-                        "nullable": true,
-                        "name": "APPOINTMENT_ID"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "APPOINTMENT_OPERATOR"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "APPOINTMENT_ASSIGEE"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "nullable": true,
-                        "name": "APPOINTMENT_CAR"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "nullable": true,
-                        "name": "APPOINTMENT_APPOINTMENTSTATUS"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "nullable": true,
-                        "name": "APPOINTMENT_SALESORDER"
-                    },
-                    {
-                        "type": "DATE",
-                        "length": 20,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "APPOINTMENT_INTAKEDATE"
-                    },
-                    {
-                        "type": "DATE",
-                        "length": 20,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "APPOINTMENT_RELEASEDATE"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 755,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "APPOINTMENT_ISSUE"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "nullable": true,
-                        "name": "APPOINTMENT_CUSTOMER"
-                    }
-                ]
-            },
-            {
                 "name": "CODBEX_APPOINTMENTSTATUS",
                 "type": "TABLE",
                 "columns": [
@@ -180,38 +109,6 @@
                         "scale": "NaN",
                         "nullable": true,
                         "name": "APPOINTMENTSTATUS_NAME"
-                    }
-                ]
-            },
-            {
-                "name": "CODBEX_APPOINTMENTTOSTOCKRECORD",
-                "type": "TABLE",
-                "columns": [
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "primaryKey": true,
-                        "identity": true,
-                        "nullable": true,
-                        "name": "APPOINTMENTTOSTOCKRECORD_ID"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "nullable": true,
-                        "name": "APPOINTMENTTOSTOCKRECORD_APPOINTMENT"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "nullable": true,
-                        "name": "APPOINTMENTTOSTOCKRECORD_STOCKRECORD"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "nullable": true,
-                        "name": "APPOINTMENTTOSTOCKRECORD_PURCHASEORDER"
                     }
                 ]
             },
@@ -241,87 +138,6 @@
                 "columns": "CARMODEL_CARCATEGORY",
                 "referencedTable": "CODBEX_CARCATEGORY",
                 "referencedColumns": "CARCATEGORY_ID"
-            },
-            {
-                "name": "Appointment_Employee",
-                "type": "foreignKey",
-                "table": "CODBEX_APPOINTMENT",
-                "constraintName": "Appointment_Employee",
-                "columns": "APPOINTMENT_OPERATOR",
-                "referencedTable": "CODBEX_EMPLOYEE",
-                "referencedColumns": "EMPLOYEE_ID"
-            },
-            {
-                "name": "Appointment_Employee",
-                "type": "foreignKey",
-                "table": "CODBEX_APPOINTMENT",
-                "constraintName": "Appointment_Employee",
-                "columns": "APPOINTMENT_ASSIGEE",
-                "referencedTable": "CODBEX_EMPLOYEE",
-                "referencedColumns": "EMPLOYEE_ID"
-            },
-            {
-                "name": "Appointment_Car",
-                "type": "foreignKey",
-                "table": "CODBEX_APPOINTMENT",
-                "constraintName": "Appointment_Car",
-                "columns": "APPOINTMENT_CAR",
-                "referencedTable": "CODBEX_CAR",
-                "referencedColumns": "CAR_ID"
-            },
-            {
-                "name": "Appointment_AppointmentStatus",
-                "type": "foreignKey",
-                "table": "CODBEX_APPOINTMENT",
-                "constraintName": "Appointment_AppointmentStatus",
-                "columns": "APPOINTMENT_APPOINTMENTSTATUS",
-                "referencedTable": "CODBEX_APPOINTMENTSTATUS",
-                "referencedColumns": "APPOINTMENTSTATUS_ID"
-            },
-            {
-                "name": "Appointment_SalesOrder",
-                "type": "foreignKey",
-                "table": "CODBEX_APPOINTMENT",
-                "constraintName": "Appointment_SalesOrder",
-                "columns": "APPOINTMENT_SALESORDER",
-                "referencedTable": "CODBEX_SALESORDER",
-                "referencedColumns": "SALESORDER_ID"
-            },
-            {
-                "name": "Appointment_Customer",
-                "type": "foreignKey",
-                "table": "CODBEX_APPOINTMENT",
-                "constraintName": "Appointment_Customer",
-                "columns": "APPOINTMENT_CUSTOMER",
-                "referencedTable": "CODBEX_CUSTOMER",
-                "referencedColumns": "CUSTOMER_ID"
-            },
-            {
-                "name": "AppointmentToStockRecord_Appointment",
-                "type": "foreignKey",
-                "table": "CODBEX_APPOINTMENTTOSTOCKRECORD",
-                "constraintName": "AppointmentToStockRecord_Appointment",
-                "columns": "APPOINTMENTTOSTOCKRECORD_APPOINTMENT",
-                "referencedTable": "CODBEX_APPOINTMENT",
-                "referencedColumns": "APPOINTMENT_ID"
-            },
-            {
-                "name": "AppointmentToStockRecord_StockRecord",
-                "type": "foreignKey",
-                "table": "CODBEX_APPOINTMENTTOSTOCKRECORD",
-                "constraintName": "AppointmentToStockRecord_StockRecord",
-                "columns": "APPOINTMENTTOSTOCKRECORD_STOCKRECORD",
-                "referencedTable": "CODBEX_STOCKRECORD",
-                "referencedColumns": "STOCKRECORD_ID"
-            },
-            {
-                "name": "AppointmentToStockRecord_PurchaseOrder",
-                "type": "foreignKey",
-                "table": "CODBEX_APPOINTMENTTOSTOCKRECORD",
-                "constraintName": "AppointmentToStockRecord_PurchaseOrder",
-                "columns": "APPOINTMENTTOSTOCKRECORD_PURCHASEORDER",
-                "referencedTable": "CODBEX_PURCHASEORDER",
-                "referencedColumns": "PURCHASEORDER_ID"
             }
         ]
     },

@@ -42,6 +42,9 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.CarModel !== undefined) {
 				filter.$filter.equals.CarModel = entity.CarModel;
 			}
+			if (entity.PlateNumber) {
+				filter.$filter.contains.PlateNumber = entity.PlateNumber;
+			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,
 				filter: filter

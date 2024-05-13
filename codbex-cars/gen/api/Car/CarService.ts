@@ -119,6 +119,9 @@ class CarService {
     }
 
     private validateEntity(entity: any): void {
+        if (entity.PlateNumber?.length > 255) {
+            throw new ValidationError(`The 'PlateNumber' exceeds the maximum length of [255] characters`);
+        }
         for (const next of validationModules) {
             next.validate(entity);
         }

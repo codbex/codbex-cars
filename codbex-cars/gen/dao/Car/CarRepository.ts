@@ -6,10 +6,12 @@ import { dao as daoApi } from "sdk/db";
 export interface CarEntity {
     readonly Id: number;
     CarModel?: number;
+    PlateNumber: string;
 }
 
 export interface CarCreateEntity {
     readonly CarModel?: number;
+    readonly PlateNumber: string;
 }
 
 export interface CarUpdateEntity extends CarCreateEntity {
@@ -21,30 +23,37 @@ export interface CarEntityOptions {
         equals?: {
             Id?: number | number[];
             CarModel?: number | number[];
+            PlateNumber?: string | string[];
         };
         notEquals?: {
             Id?: number | number[];
             CarModel?: number | number[];
+            PlateNumber?: string | string[];
         };
         contains?: {
             Id?: number;
             CarModel?: number;
+            PlateNumber?: string;
         };
         greaterThan?: {
             Id?: number;
             CarModel?: number;
+            PlateNumber?: string;
         };
         greaterThanOrEqual?: {
             Id?: number;
             CarModel?: number;
+            PlateNumber?: string;
         };
         lessThan?: {
             Id?: number;
             CarModel?: number;
+            PlateNumber?: string;
         };
         lessThanOrEqual?: {
             Id?: number;
             CarModel?: number;
+            PlateNumber?: string;
         };
     },
     $select?: (keyof CarEntity)[],
@@ -81,6 +90,12 @@ export class CarRepository {
                 name: "CarModel",
                 column: "CAR_CARMODEL",
                 type: "INTEGER",
+            },
+            {
+                name: "PlateNumber",
+                column: "CAR_PLATENUMBER",
+                type: "VARCHAR",
+                required: true
             }
         ]
     };
