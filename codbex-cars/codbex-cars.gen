@@ -34,8 +34,7 @@
     "entities": {
       "views": [
         "CarCategory",
-        "CarModel",
-        "AppointmentStatus"
+        "CarModel"
       ],
       "name": "entities",
       "label": "entities",
@@ -546,87 +545,6 @@
           "project": "codbex-partners"
         }
       ],
-      "primaryKeys": [
-        "Id"
-      ],
-      "primaryKeysString": "Id"
-    },
-    {
-      "properties": [
-        {
-          "calculatedPropertyExpressionCreate": "",
-          "calculatedPropertyExpressionUpdate": "",
-          "dataAutoIncrement": true,
-          "dataLength": "0",
-          "dataName": "APPOINTMENTSTATUS_ID",
-          "dataNullable": true,
-          "dataPrimaryKey": true,
-          "dataType": "INTEGER",
-          "dataUnique": false,
-          "isCalculatedProperty": false,
-          "isRequiredProperty": false,
-          "name": "Id",
-          "widgetIsMajor": true,
-          "widgetLength": "20",
-          "widgetSize": "",
-          "widgetType": "TEXTBOX",
-          "dataNotNull": false,
-          "widgetLabel": "Id",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "int",
-          "dataTypeTypescript": "number",
-          "inputRule": ""
-        },
-        {
-          "calculatedPropertyExpressionCreate": "",
-          "calculatedPropertyExpressionUpdate": "",
-          "dataAutoIncrement": false,
-          "dataLength": "20",
-          "dataName": "APPOINTMENTSTATUS_NAME",
-          "dataNullable": true,
-          "dataPrecision": "NaN",
-          "dataPrimaryKey": false,
-          "dataScale": "NaN",
-          "dataType": "VARCHAR",
-          "dataUnique": false,
-          "isCalculatedProperty": false,
-          "isRequiredProperty": false,
-          "name": "Name",
-          "widgetIsMajor": true,
-          "widgetLength": "20",
-          "widgetSize": "",
-          "widgetType": "TEXTBOX",
-          "dataNotNull": false,
-          "widgetLabel": "Name",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
-          "minLength": 0,
-          "maxLength": 20,
-          "inputRule": ""
-        }
-      ],
-      "caption": "Manage entity AppointmentStatus",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_APPOINTMENTSTATUS\"",
-      "dataName": "APPOINTMENTSTATUS",
-      "dataQuery": "",
-      "icon": "/services/web/resources/unicons/file.svg",
-      "layoutType": "MANAGE",
-      "menuIndex": "100",
-      "menuKey": "appointmentstatus",
-      "menuLabel": "AppointmentStatus",
-      "name": "AppointmentStatus",
-      "navigationPath": "/Home",
-      "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-      "perspectiveLabel": "Entities",
-      "perspectiveName": "entities",
-      "perspectiveOrder": "100",
-      "perspectiveRole": "",
-      "title": "AppointmentStatus",
-      "tooltip": "AppointmentStatus",
-      "type": "PRIMARY",
-      "dataSource": "DefaultDB",
-      "referencedProjections": [],
       "primaryKeys": [
         "Id"
       ],

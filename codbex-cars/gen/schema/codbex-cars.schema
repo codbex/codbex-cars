@@ -91,28 +91,6 @@
                 ]
             },
             {
-                "name": "CODBEX_APPOINTMENTSTATUS",
-                "type": "TABLE",
-                "columns": [
-                    {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "primaryKey": true,
-                        "identity": true,
-                        "nullable": true,
-                        "name": "APPOINTMENTSTATUS_ID"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "APPOINTMENTSTATUS_NAME"
-                    }
-                ]
-            },
-            {
                 "name": "Car_CarModel",
                 "type": "foreignKey",
                 "table": "CODBEX_CAR",
