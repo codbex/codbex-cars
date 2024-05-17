@@ -40,7 +40,7 @@
                         "widgetType": "TEXTBOX",
                         "relationshipName": "Car_CarModel",
                         "relationshipEntityName": "CarModel",
-                        "relationshipEntityPerspectiveName": "entities",
+                        "relationshipEntityPerspectiveName": "Settings",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
@@ -71,7 +71,7 @@
                 "feedPassword": "YWRtaW4=",
                 "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
-                "layoutType": "MANAGE",
+                "layoutType": "MANAGE_MASTER",
                 "menuIndex": "100",
                 "menuKey": "car",
                 "menuLabel": "Car",
@@ -244,6 +244,8 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}CARCATEGORY\"",
                 "dataName": "CARCATEGORY",
                 "dataQuery": "",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -251,14 +253,14 @@
                 "menuLabel": "CarCategory",
                 "name": "CarCategory",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/wrench.svg",
+                "perspectiveLabel": "Settings",
+                "perspectiveName": "Settings",
+                "perspectiveOrder": "590",
                 "perspectiveRole": "",
                 "title": "CarCategory",
                 "tooltip": "CarCategory",
-                "type": "PRIMARY"
+                "type": "SETTING"
             },
             {
                 "properties": [
@@ -361,7 +363,7 @@
                         "widgetType": "TEXTBOX",
                         "relationshipName": "CarModel_CarCategory",
                         "relationshipEntityName": "CarCategory",
-                        "relationshipEntityPerspectiveName": "entities",
+                        "relationshipEntityPerspectiveName": "Settings",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     }
                 ],
@@ -369,6 +371,8 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}CARMODEL\"",
                 "dataName": "CARMODEL",
                 "dataQuery": "",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -376,14 +380,14 @@
                 "menuLabel": "CarModel",
                 "name": "CarModel",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/wrench.svg",
+                "perspectiveLabel": "Settings",
+                "perspectiveName": "Settings",
+                "perspectiveOrder": "590",
                 "perspectiveRole": "",
                 "title": "CarModel",
                 "tooltip": "CarModel",
-                "type": "PRIMARY"
+                "type": "SETTING"
             }
         ],
         "perspectives": [
@@ -395,10 +399,10 @@
                 "role": {}
             },
             {
-                "name": "Appointment",
-                "label": "Appointment",
-                "icon": "/services/web/resources/unicons/calender.svg",
-                "order": "90",
+                "name": "Settings",
+                "label": "Settings",
+                "icon": "/services/web/resources/unicons/wrench.svg",
+                "order": "590",
                 "role": {}
             }
         ],

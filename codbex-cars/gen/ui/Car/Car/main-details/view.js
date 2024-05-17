@@ -4,11 +4,11 @@
  * Do not modify the content as it may be re-generated again.
  */
 const viewData = {
-    id: "Car",
+    id: "Car-details",
     label: "Car",
     factory: "frame",
-    region: "left",
-    link: "/services/web/codbex-cars/gen/ui/Car/Car/index.html",
+    region: "center",
+    link: "/services/web/codbex-cars/gen/ui/Car/Car/main-details/index.html",
     perspectiveName: "Car",
 };
 

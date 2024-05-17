@@ -10,8 +10,8 @@ servers:
   - url: /services/ts
 tags:
   - name: Car
-  - name: entities
-  - name: entities
+  - name: Settings
+  - name: Settings
 paths:
   /codbex-cars/gen/api/Car/CarService.ts:
     get:
@@ -413,7 +413,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-cars/gen/api/entities/CarCategoryService.ts:
+  /codbex-cars/gen/api/Settings/CarCategoryService.ts:
     get:
       summary: List CarCategory
       parameters:
@@ -434,7 +434,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - entities
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -465,7 +465,7 @@ paths:
     post:
       summary: Create CarCategory
       tags:
-        - entities
+        - Settings
       requestBody:
         content:
           application/json:
@@ -497,7 +497,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-cars/gen/api/entities/CarCategoryService.ts/{id}:
+  /codbex-cars/gen/api/Settings/CarCategoryService.ts/{id}:
     get:
       summary: Get CarCategory by Id
       parameters:
@@ -508,7 +508,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -546,7 +546,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - Settings
       requestBody:
         content:
           application/json:
@@ -594,7 +594,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - Settings
       responses:
         204:
           description: Successful Request
@@ -616,11 +616,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-cars/gen/api/entities/CarCategoryService.ts/count:
+  /codbex-cars/gen/api/Settings/CarCategoryService.ts/count:
     get:
       summary: Count the number of CarCategory
       tags:
-        - entities
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -644,7 +644,7 @@ paths:
     post:
       summary: Count the number of CarCategory by CarCategoryFilterOptions
       tags:
-        - entities
+        - Settings
       requestBody:
         content:
           application/json:
@@ -726,11 +726,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-cars/gen/api/entities/CarCategoryService.ts/search:
+  /codbex-cars/gen/api/Settings/CarCategoryService.ts/search:
     post:
       summary: Search CarCategory by CarCategoryFilterOptions
       tags:
-        - entities
+        - Settings
       requestBody:
         content:
           application/json:
@@ -813,7 +813,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-cars/gen/api/entities/CarModelService.ts:
+  /codbex-cars/gen/api/Settings/CarModelService.ts:
     get:
       summary: List CarModel
       parameters:
@@ -834,7 +834,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - entities
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -865,7 +865,7 @@ paths:
     post:
       summary: Create CarModel
       tags:
-        - entities
+        - Settings
       requestBody:
         content:
           application/json:
@@ -897,7 +897,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-cars/gen/api/entities/CarModelService.ts/{id}:
+  /codbex-cars/gen/api/Settings/CarModelService.ts/{id}:
     get:
       summary: Get CarModel by Id
       parameters:
@@ -908,7 +908,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -946,7 +946,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - Settings
       requestBody:
         content:
           application/json:
@@ -994,7 +994,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - Settings
       responses:
         204:
           description: Successful Request
@@ -1016,11 +1016,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-cars/gen/api/entities/CarModelService.ts/count:
+  /codbex-cars/gen/api/Settings/CarModelService.ts/count:
     get:
       summary: Count the number of CarModel
       tags:
-        - entities
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -1044,7 +1044,7 @@ paths:
     post:
       summary: Count the number of CarModel by CarModelFilterOptions
       tags:
-        - entities
+        - Settings
       requestBody:
         content:
           application/json:
@@ -1126,11 +1126,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-cars/gen/api/entities/CarModelService.ts/search:
+  /codbex-cars/gen/api/Settings/CarModelService.ts/search:
     post:
       summary: Search CarModel by CarModelFilterOptions
       tags:
-        - entities
+        - Settings
       requestBody:
         content:
           application/json:

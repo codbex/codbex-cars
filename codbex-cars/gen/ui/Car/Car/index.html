@@ -18,56 +18,48 @@
 	<body class="dg-vbox">
 		<fd-toolbar has-title="true">
 			<fd-toolbar-title>Items ({{dataCount}})</fd-toolbar-title>
-			<fd-button compact="true" dg-type="transparent" dg-label="Filter" ng-click="openFilter()"></fd-button>
-			<fd-button ng-repeat="action in pageActions" compact="true" dg-type="transparent" dg-label="{{action.label}}" ng-click="triggerPageAction(action)"></fd-button>
 			<fd-toolbar-spacer></fd-toolbar-spacer>
-			<fd-button compact="true" dg-type="transparent" dg-label="Create" ng-click="createEntity()"></fd-button>
+			<fd-button compact="true" dg-type="transparent" dg-label="Create"
+				state="{{action == 'update'? 'disabled' : ''}}" ng-click="createEntity()"></fd-button>
+			<fd-button compact="true" dg-type="transparent" dg-label="Edit"
+				state="{{selectedEntity == null ? 'disabled' : ''}}" ng-click="updateEntity()"></fd-button>
+			<fd-button compact="true" dg-type="transparent" dg-label="Delete"
+				state="{{selectedEntity == null || action == 'update'? 'disabled' : ''}}" ng-click="deleteEntity()">
+			</fd-button>
+			<fd-popover>
+				<fd-popover-control>
+					<fd-button compact="true" glyph="sap-icon--overflow" dg-type="transparent"
+						aria-label="Header Menu Button">
+					</fd-button>
+				</fd-popover-control>
+				<fd-popover-body dg-align="bottom-right">
+					<fd-menu aria-label="Header Menu" no-backdrop="true" no-shadow="true">
+						<fd-menu-item title="Filter" ng-click="openFilter()"></fd-menu-item>
+						<fd-menu-item ng-repeat="action in pageActions" title="{{action.label}}"
+							ng-click="triggerPageAction(action)"></fd-menu-item>
+					</fd-menu>
+				</fd-popover-body>
+			</fd-popover>
 		</fd-toolbar>
-
-		<fd-scrollbar class="dg-full-height" ng-hide="data == null">
-			<table fd-table display-mode="compact" inner-borders="top" outer-borders="none">
-				<thead fd-table-header sticky="true">
-					<tr fd-table-row>
-						<th fd-table-header-cell>CarModel</th>
-						<th fd-table-header-cell>PlateNumber</th>
-						<th fd-table-header-cell></th>
-					</tr>
-				</thead>
-				<tbody fd-table-body>
-					<tr fd-table-row hoverable="true" ng-show="data.length == 0">
-						<td fd-table-cell no-data="true">No data available.</td>
-					</tr>
-					<tr fd-table-row hoverable="true" ng-repeat="next in data"
-						dg-selected="next.Id === selectedEntity.Id" ng-click="selectEntity(next)">
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.CarModel}}</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.PlateNumber}}</td>
-						<td fd-table-cell fit-content="true">
-							<fd-popover>
-								<fd-popover-control>
-									<fd-button compact="true" glyph="sap-icon--overflow" dg-type="transparent"
-										aria-label="Table Row Menu Button" ng-click="setTristate()">
-									</fd-button>
-								</fd-popover-control>
-								<fd-popover-body dg-align="bottom-right">
-									<fd-menu aria-label="Table Row Menu" no-backdrop="true" no-shadow="true">
-										<fd-menu-item ng-repeat="action in entityActions" title="{{action.label}}" ng-click="triggerEntityAction(action)"></fd-menu-item>
-										<fd-menu-item title="View Details" ng-click="openDetails(next)"></fd-menu-item>
-										<fd-menu-item title="Edit" ng-click="updateEntity(next)"></fd-menu-item>
-										<fd-menu-item title="Delete" ng-click="deleteEntity(next)"></fd-menu-item>
-									</fd-menu>
-								</fd-popover-body>
-							</fd-popover>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+		<fd-scrollbar>
+			<fd-list list-type="navigation-indication" byline="true" state="disabled">
+				<fd-list-item ng-repeat="next in data">
+					<fd-list-link navigation-indicator="true" dg-selected="next.Id === selectedEntity.Id"
+						navigated="next.Id === selectedEntity.Id"
+						ng-click="action == 'select' ? selectEntity(next) : ''">
+						<fd-list-content
+							item-title="{{next.CarModel}}">
+							<fd-list-byline dg-align="left">
+								{{next.PlateNumber}}
+							</fd-list-byline>
+						</fd-list-content>
+					</fd-list-link>
+				</fd-list-item>
+			</fd-list>
+			<fd-list-action-item ng-show="dataPage <= dataPages && dataCount > dataLimit" ng-click="loadPage()">
+				Load More ...
+			</fd-list-action-item>
 		</fd-scrollbar>
-
-		<fd-pagination total-items="dataCount" items-per-page="dataLimit"
-			items-per-page-options="[10, 20, 50]" page-change="loadPage(pageNumber)"
-			items-per-page-change="loadPage(pageNumber)" items-per-page-placement="top-start" compact="true"
-			display-total-items="true" ng-hide="dataCount == 0">
-		</fd-pagination>
 	</body>
 
 </html>

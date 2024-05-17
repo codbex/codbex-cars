@@ -1,0 +1,5 @@
+{
+    "module": "codbex-cars/gen/ui/Settings/CarCategory/dialog-filter/view.js",
+    "extensionPoint": "codbex-cars-dialog-window",
+    "description": "codbex-cars - Application Dialog Window"
+}

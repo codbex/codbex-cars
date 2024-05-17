@@ -1,17 +1,6 @@
 {
   "files": [
     {
-      "table": "CODBEX_APPOINTMENTSTATUS",
-      "schema": "PUBLIC",
-      "file": "/codbex-cars-data/appointment-statuses.csv",
-      "header": true,
-      "useHeaderNames": true,
-      "delimField": ",",
-      "delimEnclosing": "\"",
-      "distinguishEmptyFromNull": true,
-      "version": "1.0"
-    },
-    {
       "table": "CODBEX_MANUFACTURER",
       "schema": "PUBLIC",
       "file": "/codbex-cars-data/car-manufacturers.csv",
